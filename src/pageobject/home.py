@@ -3,10 +3,6 @@ asdsad
 """
 from dataclasses import dataclass
 
-from sys import path
-
-path.append(path[0] + "/..")
-
 from selenium.webdriver.common.by import By
 
 
