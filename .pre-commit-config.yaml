@@ -1,0 +1,59 @@
+repos:
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.5.0
+  hooks:
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+  - id: check-merge-conflict
+  - id: check-json
+  - id: check-yaml
+  - id: requirements-txt-fixer
+
+
+
+- repo: https://github.com/shellcheck-py/shellcheck-py
+  rev: v0.8.0.4
+  hooks:
+  - id: shellcheck
+
+
+
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.4.0
+  hooks:
+  - id: pretty-format-toml
+    args: [--autofix]
+  - id: pretty-format-yaml
+    args: [--autofix, --indent, '2']
+
+
+
+- repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
+  rev: v1.0.4
+  hooks:
+  - id: python-bandit-vulnerability-check
+    args: [-l, --recursive, -x, tests]
+    files: .py$
+
+
+
+- repo: https://github.com/asottile/reorder_python_imports
+  rev: v1.4.0
+  hooks:
+  - id: reorder-python-imports
+    args: [--py3-plus]
+
+
+
+- repo: local
+  hooks:
+  - id: tests
+    name: run tests
+    entry: .venv/bin/pytest -v
+    language: python
+    additional_dependencies: [pre-commit, pytest]
+    always_run: false
+    pass_filenames: false
+    types: [python]
+    stages: [commit]
