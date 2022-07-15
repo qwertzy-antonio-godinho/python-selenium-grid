@@ -1,5 +1,5 @@
 """
-asdsad
+Page Object Model definition for Search results page.
 """
 from dataclasses import dataclass
 
@@ -8,17 +8,18 @@ from selenium.webdriver.common.by import By
 
 @dataclass
 class PageLocators:
-    """asdasd"""
+    """Identification of web elements to be found in the page."""
 
     element_search_results_box = "content_box"
     element_search_results_article = "//article/header/h2/a"
 
 
 class PageObjects:
-    """sadsd"""
+    """Create methods for using the web elements in the Tests."""
 
     def __init__(self, driver):
-        """adsad"""
+        """Initialization of POM using the web driver passed from the tests.
+        Searches for elements in the page."""
         self.driver = driver
 
         self.element_search_results_box = driver.find_element(
@@ -29,7 +30,8 @@ class PageObjects:
         )
 
     def get_search_results_box(self, item):
-        """sadsad"""
+        """Method to access and usage of element in the tests. Note, the item
+        passed if not exists will return None."""
         for index, element_id in enumerate(
             self.element_search_results_article
         ):

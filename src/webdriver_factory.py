@@ -1,5 +1,7 @@
 """
-asdasd
+Create a webdriver.remote factory to be used as base, extends 
+unittest TestCase class overwritting setUp and tearDown methods. 
+This class will be inherited by the tests.
 """
 from unittest import TestCase
 
@@ -7,10 +9,12 @@ from selenium import webdriver
 
 
 class WebDriverSetup(TestCase):
-    """sdasd"""
+    """Define the WebDriverSetup"""
 
     def setUp(self):
-        """sads"""
+        """Setup different browser's capabilities and options.
+        Define the Grid connection URL and which browser to launch.
+        Creates the base driver."""
         chrome_options = webdriver.ChromeOptions()
         chrome_options.set_capability("browserName", "chrome")
 
@@ -24,6 +28,6 @@ class WebDriverSetup(TestCase):
         self.driver = driver
 
     def tearDown(self):
-        """asdadsd"""
+        """Clean up after test execution finishes."""
         if self.driver is not None:
             self.driver.quit()

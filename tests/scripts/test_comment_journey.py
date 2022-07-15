@@ -1,5 +1,5 @@
 """
-asdsad
+Tests to test User journey.
 """
 from sys import path
 
@@ -12,10 +12,12 @@ from src.pageobject.article import PageObjects as ArticlePOM
 
 
 class TestComments(WebDriverSetup):
-    """asdsdad"""
+    """Test User journey Home -> Search -> Select story from list -> Verify 
+    comments section is available."""
 
     def test_user_journey_comments_available_from_home_page_search(self):
-        """asdsd"""
+        """Test implementation, navigate to site, instantiate the page 
+        POM objects, perform actions on them and assert test."""
         driver = self.driver
         driver.get("https://www.osnews.com")
 
@@ -24,7 +26,7 @@ class TestComments(WebDriverSetup):
         home_page.get_search_button().click()
 
         search_results_page = SearchResultsPOM(driver)
-        search_results_page.get_search_results_box(1).click()
+        search_results_page.get_search_results_box(100).click()
 
         article_page = ArticlePOM(driver)
         assert article_page.get_comments_div() is not None
