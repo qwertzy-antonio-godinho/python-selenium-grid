@@ -3,12 +3,15 @@ A playground repository with an example test framework written in Python using S
 This repo was setup for me to catchup with latest developments in Selenium using Python as the programming laguage, the last time I used it was in mid 2018 with Java bindings. This is still pretty much a work in progress and currently has Driver factory, Page Object Model and the ability to run in a distributed way (through the Selenium grid). As a test playground I'm using a website who publishes news about technology and operating system to write and run browser tests against.
 
 TODO (in no specific order):
+- Implement Grid (Hub & Node)
 - Rework POM
-- Implement test suites 
+- Implement test suite
 - Implement concurrent execution
 - Use Ghrekin (BDD)
+- Implement Implicit Waits
 - Rework precommit hooks
 - Implement logger
+- Read test data from external source (CSV file) and expected results
 - Implement execution reports
 - Make sure exceptions are handled
 - Possibly more...
