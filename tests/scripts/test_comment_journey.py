@@ -26,7 +26,10 @@ class TestComments(WebDriverSetup):
         home_page.get_search_button().click()
 
         search_results_page = SearchResultsPOM(driver)
-        search_results_page.get_search_results_box(100).click()
+
+        # Will raise exception and fail test if value doesn't exist
+        # AttributeError: 'NoneType' object has no attribute 'click'
+        search_results_page.get_search_results_box(1).click() 
 
         article_page = ArticlePOM(driver)
         assert article_page.get_comments_div() is not None
