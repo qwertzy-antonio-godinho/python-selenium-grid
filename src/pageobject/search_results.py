@@ -4,6 +4,8 @@ Page Object Model definition for Search results page.
 from dataclasses import dataclass
 
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 @dataclass
@@ -22,11 +24,16 @@ class PageObjects:
         Searches for elements in the page."""
         self.driver = driver
 
-        self.element_search_results_box = driver.find_element(
-            By.ID, PageLocators.element_search_results_box
+        self.element_search_results_box = WebDriverWait(driver, 10).until(
+            expected_conditions.presence_of_element_located(
+                (By.ID, PageLocators.element_search_results_box)
+            )
         )
-        self.element_search_results_article = driver.find_elements(
-            By.XPATH, PageLocators.element_search_results_article
+
+        self.element_search_results_article = WebDriverWait(driver, 10).until(
+            expected_conditions.presence_of_all_elements_located(
+                (By.XPATH, PageLocators.element_search_results_article)
+            )
         )
 
     def get_search_results_box(self, item):
