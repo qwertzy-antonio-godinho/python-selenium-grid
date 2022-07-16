@@ -5,12 +5,12 @@ This repo was setup for me to catchup with latest developments in Selenium using
 
 *TODO (in no specific order):*
 
-- Implement Grid (Hub & Node)
+- ~~Implement Grid (Hub & Node)~~
 - Rework POM
 - Implement test suite
 - Implement concurrent execution
 - Use Ghrekin (BDD)
-- Implement Implicit Waits
+- ~~Implement explicit waits with expected conditions~~
 - Rework precommit hooks
 - Implement logger
 - Read test data from external source (CSV file) and expected results
