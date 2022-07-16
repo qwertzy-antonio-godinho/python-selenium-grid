@@ -1,6 +1,6 @@
 """
-Create a webdriver.remote factory to be used as base, extends 
-unittest TestCase class overwritting setUp and tearDown methods. 
+Create a webdriver.remote factory to be used as base, extends
+unittest TestCase class overwritting setUp and tearDown methods.
 This class will be inherited by the tests.
 """
 from unittest import TestCase
