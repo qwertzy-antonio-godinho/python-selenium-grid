@@ -3,7 +3,7 @@ Tests to test User journey.
 """
 from sys import path
 
-path.append(path[0] + "/../..")
+path.append(path[0] + "/..")
 
 from src.pageobject.article import PageObjects as ArticlePOM
 from src.pageobject.home import PageObjects as HomePOM
