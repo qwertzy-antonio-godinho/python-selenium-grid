@@ -7,7 +7,7 @@ This repo was setup for me to catchup with latest developments in Selenium using
 
 - ~~Implement Grid (Hub & Node)~~
 - Rework POM
-- Add general test settings
+- Add general test settings (read from INI file)
 - Implement test suite
 - Implement concurrent execution
 - Use Gherkin (BDD)
