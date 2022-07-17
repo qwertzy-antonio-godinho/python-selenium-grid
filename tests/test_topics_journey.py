@@ -25,4 +25,4 @@ class TestTopics(WebDriverSetup):
         home_page.get_topics_dropdown().select_by_visible_text("Gentoo")
 
         topic_page = TopicPOM(driver)
-        assert_that(topic_page.get_topic_articles()).is_same_as(20)
+        assert_that(topic_page.get_topic_articles()).is_equal_to(20)
