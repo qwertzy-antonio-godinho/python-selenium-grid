@@ -10,7 +10,7 @@ This repo was setup for me to catchup with latest developments in Selenium using
 - Add general test settings
 - Implement test suite
 - Implement concurrent execution
-- Use Ghrekin (BDD)
+- Use Gherkin (BDD)
 - ~~Implement explicit waits with expected conditions~~
 - Rework precommit hooks
 - Implement logger
