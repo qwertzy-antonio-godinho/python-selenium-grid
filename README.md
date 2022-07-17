@@ -7,13 +7,15 @@ This repo was setup for me to catchup with latest developments in Selenium using
 
 - ~~Implement Grid (Hub & Node)~~
 - Rework POM
-- Add general test settings (read from INI file)
+- ~~Add general test settings (read from INI file)~~
+- ~~Add ability to configure the tests~~
 - Implement test suite
 - Implement concurrent execution
 - Use Gherkin (BDD)
 - ~~Implement explicit waits with expected conditions~~
 - Rework precommit hooks
 - Implement logger
+- ~~Use fluent assertions~~
 - Read test data from external source (CSV file) and expected results
 - Implement execution reports
 - Make sure exceptions are handled
