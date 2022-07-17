@@ -5,6 +5,7 @@ from sys import path
 
 path.append(path[0] + "/..")
 
+from assertpy import assert_that
 from src.pageobject.home import PageObjects as HomePOM
 from src.pageobject.topic import PageObjects as TopicPOM
 from src.webdriver_factory import WebDriverSetup
@@ -24,4 +25,4 @@ class TestTopics(WebDriverSetup):
         home_page.get_topics_dropdown().select_by_visible_text("Gentoo")
 
         topic_page = TopicPOM(driver)
-        assert topic_page.get_topic_articles() == 20
+        assert_that(topic_page.get_topic_articles()).is_same_as(20)

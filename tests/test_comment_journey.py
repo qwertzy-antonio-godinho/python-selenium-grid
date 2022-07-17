@@ -5,6 +5,7 @@ from sys import path
 
 path.append(path[0] + "/..")
 
+from assertpy import assert_that
 from src.pageobject.article import PageObjects as ArticlePOM
 from src.pageobject.home import PageObjects as HomePOM
 from src.pageobject.search_results import PageObjects as SearchResultsPOM
@@ -32,4 +33,4 @@ class TestComments(WebDriverSetup):
         search_results_page.get_search_results_box(1).click()
 
         article_page = ArticlePOM(driver)
-        assert article_page.get_comments_div() is not None
+        assert_that(article_page.get_comments_div()).is_not_none()
