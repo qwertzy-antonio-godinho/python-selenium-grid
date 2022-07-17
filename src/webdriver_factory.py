@@ -7,22 +7,35 @@ from unittest import TestCase
 
 from selenium import webdriver
 
+from src.configuration import Configuration
+from src.settings import Settings
 
-class WebDriverSetup(TestCase):
+
+class WebDriverSetup(TestCase, Configuration):
     """Define the WebDriverSetup"""
+
+    settings = Settings(Configuration.ENVIRONMENT)
 
     def setUp(self):
         """Setup different browser's capabilities and options.
         Define the Grid connection URL and which browser to launch.
         Creates the base driver."""
+
         chrome_options = webdriver.ChromeOptions()
         chrome_options.set_capability("browserName", "chrome")
 
         firefox_options = webdriver.FirefoxOptions()
         firefox_options.set_capability("browserName", "firefox")
 
+        if Configuration.BROWSER == "chrome":
+            options = chrome_options
+        elif Configuration.BROWSER == "firefox":
+            options = firefox_options
+        else:
+            raise Exception(f"Issue with {Configuration.BROWSER=}, are you using an accepted value?")
+
         driver = webdriver.Remote(
-            command_executor="http://localhost:4450", options=chrome_options
+            command_executor=self.settings.get_grid_url(), options=options
         )
 
         self.driver = driver

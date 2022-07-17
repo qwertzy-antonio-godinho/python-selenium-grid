@@ -19,10 +19,10 @@ class TestTopics(WebDriverSetup):
         """Test implementation, navigate to site, instantiate the page
         POM objects, perform actions on them and assert test."""
         driver = self.driver
-        driver.get("https://www.osnews.com")
+        driver.get(WebDriverSetup.settings.get_aut_url())
 
-        home_page = HomePOM(driver)
+        home_page = HomePOM(driver, WebDriverSetup.TIMEOUT)
         home_page.get_topics_dropdown().select_by_visible_text("Gentoo")
 
-        topic_page = TopicPOM(driver)
+        topic_page = TopicPOM(driver, WebDriverSetup.TIMEOUT)
         assert_that(topic_page.get_topic_articles()).is_equal_to(20)

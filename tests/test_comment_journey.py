@@ -20,17 +20,17 @@ class TestComments(WebDriverSetup):
         """Test implementation, navigate to site, instantiate the page
         POM objects, perform actions on them and assert test."""
         driver = self.driver
-        driver.get("https://www.osnews.com")
+        driver.get(WebDriverSetup.settings.get_aut_url())
 
-        home_page = HomePOM(driver)
+        home_page = HomePOM(driver, WebDriverSetup.TIMEOUT)
         home_page.get_search_textbox().send_keys("Test")
         home_page.get_search_button().click()
 
-        search_results_page = SearchResultsPOM(driver)
+        search_results_page = SearchResultsPOM(driver, WebDriverSetup.TIMEOUT)
 
         # Will raise exception and fail test if value doesn't exist
         # AttributeError: 'NoneType' object has no attribute 'click'
         search_results_page.get_search_results_box(1).click()
 
-        article_page = ArticlePOM(driver)
+        article_page = ArticlePOM(driver, WebDriverSetup.TIMEOUT)
         assert_that(article_page.get_comments_div()).is_not_none()
