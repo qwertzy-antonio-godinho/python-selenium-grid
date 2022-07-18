@@ -10,7 +10,7 @@ This repo was setup for me to catchup with latest developments in Selenium using
 - ~~Add general test settings (read from INI file)~~
 - ~~Add ability to configure the tests~~
 - ~~Implement test suite~~
-- Implement concurrent execution
+- Implement concurrent execution (maybe through pytest plugin?)
 - Use Gherkin (BDD)
 - ~~Implement explicit waits with expected conditions~~
 - Rework precommit hooks
