@@ -9,7 +9,7 @@ This repo was setup for me to catchup with latest developments in Selenium using
 - Rework POM
 - ~~Add general test settings (read from INI file)~~
 - ~~Add ability to configure the tests~~
-- Implement test suite
+- ~~Implement test suite~~
 - Implement concurrent execution
 - Use Gherkin (BDD)
 - ~~Implement explicit waits with expected conditions~~
